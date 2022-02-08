@@ -10,5 +10,17 @@
 // isSubsequence('abc', 'acb'); // false (order matters)
 
 
-function isSubsequence() {
+function isSubsequence(subStr, str) {
+    let letterToCheckInd = 0;
+    let currentInd = 0;
+    while ((letterToCheckInd < subStr.length) || (currentInd < str.length)) {
+        if (subStr[letterToCheckInd] === str[currentInd]) {
+            if (letterToCheckInd === subStr.length-1) return true; 
+            letterToCheckInd++;
+        }
+        if (currentInd === str.length-1) return false; 
+        currentInd++;
+    }
+    return false;
 }
+

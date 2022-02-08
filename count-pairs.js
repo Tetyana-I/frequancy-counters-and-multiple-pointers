@@ -13,5 +13,7 @@
 // countPairs([1,2,3,0,-1,-2],0) // 2
 
 
-function countPairs() {
+function countPairs(arr, sum) {
+    let left = 0;
+    let 
 }
