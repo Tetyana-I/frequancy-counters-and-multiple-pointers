@@ -12,13 +12,13 @@
 // countPairs([0,-4],-4) // 1
 // countPairs([1,2,3,0,-1,-2],0) // 2
 
-
 function countPairs(arr, sum) {
-    let pairsCount = 0;
-    for (let i=0; i<arr.length-1; i++) {
-        for (let j=i+1; j<arr.length; j++) {
-            if ((arr[i]+arr[j]) === sum) pairsCount++;
-        }
-    }
-    return pairsCount;
+    let arrSet = new Set(arr);
+    let pairs = 0;
+    // for each element in a set, delete one and check if sum - this element is in the set
+    arr.forEach(element => {
+        arrSet.delete(element);
+        if (arrSet.has(sum-element)) pairs++; 
+    });
+    return pairs;
 }
